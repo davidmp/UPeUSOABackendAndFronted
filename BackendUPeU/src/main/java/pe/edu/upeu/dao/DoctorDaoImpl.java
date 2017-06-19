@@ -22,4 +22,10 @@ public class DoctorDaoImpl extends SysDataAccess<Integer, Doctor> implements Doc
     public void guardarEntidad(Doctor entidad) {savev(entidad); }  
     public void eliminarEntidadId(int id) {delete(id);}    
     public void modificarEntidadId(Doctor entidad) {update(entidad);}         
+    public List<Doctor> listarPorNombre(String dato){
+    return (List<Doctor>)sessionFactory.getCurrentSession()
+            .createQuery("select a from Doctor a where a.idPersona.dni like ? ")        
+            .setString(0, "%"+dato+"%")
+            .list();
+    }     
 }

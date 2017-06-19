@@ -18,5 +18,6 @@ public interface DoctorServis {
     public void guardarEntidad(Doctor entidad);
     public void eliminarEntidadId(int id);
     public void modificarEntidadId(Doctor entidad);  
+    public List<Doctor> listarEntidadNombre(String dato);
     
 }

@@ -45,9 +45,9 @@ public class DienteCController {
             List<Dientes> lista=service.listarEntidad();
             Map<String, Object> modelo=new HashMap<String, Object> ();
             modelo.put("ListaDiente", lista);
-            modelo.put("saludo", "Hola amigos");
+            modelo.put("saludo", "Hola amigos");            
             System.out.println("Holassssssssss");
-            return new ModelAndView("index", modelo);
+            return new ModelAndView("periodo/mainDiente", modelo);
 	}
 
         @RequestMapping(value = "eliminarDient", method = RequestMethod.GET)
@@ -108,7 +108,7 @@ public class DienteCController {
             List<Dientes> lista=service.listarPorNombre(dato);            
             Map<String, Object> modelo=new HashMap<String, Object> ();
             modelo.put("ListaDiente", lista);
-           return new ModelAndView("index",modelo);
+           return new ModelAndView("periodo/mainDiente",modelo);
         }
     
 }

@@ -32,4 +32,6 @@ public class DoctorServisImpl implements DoctorServis{
     public void eliminarEntidadId(int id) {dao.eliminarEntidadId(id);}    
     @Override
     public void modificarEntidadId(Doctor entidad) {dao.modificarEntidadId(entidad);}       
+    @Override
+    public List<Doctor> listarEntidadNombre(String dato){return dao.listarPorNombre(dato);}    
 }

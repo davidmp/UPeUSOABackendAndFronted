@@ -25,11 +25,10 @@
       }
 
     </style>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
- 
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
      <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
   </head>
-  <body ng-app="myApp" class="ng-cloak">
+  <body  class="ng-cloak">
       <div class="generic-container" ng-controller="UserController as ctrl">
           <div class="panel panel-default">
               <div class="panel-heading"><span class="lead">User Registration Form </span></div>
@@ -37,16 +36,12 @@
                   
                   
                           
-        <c:out value="${saludo}"/>
-        
-        <h1>Administracion de Periodos!</h1>
-        <a href="dmp1.upeu">Regresar inicio</a> &emsp14;
-        <a href="formPeriodo.upeu">Crear Periodo</a>
-        
-        
+        <c:out value="${mensaje}"/>       
+        <h1>Administracion de Doctores!</h1>
+
         <div id="idFormulario" align="center">
             
-        <form  id="formBuscar" action="buscarDientex"  method="post" name="formBuscar" >
+        <form  id="formBuscar" action="buscarDoctor"  method="post" name="formBuscar" >
         <table align="center"  class="myform">
         
         <tr align="center">
@@ -75,33 +70,32 @@
                 <!-- Default panel contents -->
               <div class="panel-heading"><span class="lead">List of Users </span></div>
               <div class="tablecontainer">
-                          <c:if test="${!empty ListaDiente}">
-                            <table >
+                          <c:if test="${!empty ListaDoctor}">
+                            <table border="1">
                                 <tr>
-                                    <th>Codigo</th>
+                                    <th># Colegiatura</th>
+                                    <th>Fecha Ing.</th>
+                                    <th>Estado</th>
                                     <th>Nombre</th>
-                                    <th>Imagen</th>
-                                    <th>TipoDiente</th>
+                                    <th>Apellidos</th>
+                                    <th>DNI</th>
                                     <th>Opciones</th>
-
                                 </tr>
-
-                                <c:forEach items="${ListaDiente}" var= "dato">   
-                                <tr>
-                                    <td><c:out value="${dato.codigo}"/></td>
-                                    <td><c:out value="${dato.nombre}"/></td>
-                                    <td><c:out value="${dato.imagen}"/></td>
-                                    <td><c:out value="${dato.tipoDiente}"/></td>                                    
-                                    <td></td>
-                                    <td>
-                                        <a href="eliminarDient?id=${dato.idDientes}">Eliminar</a>&emsp14;
-                                        <a href="modificarDienteX?id=${dato.idDientes}">Modificar</a>
-                                    </td>
-
-                                </tr>
-                                </c:forEach>
+                <c:forEach items="${ListaDoctor}" var= "dato">   
+                <tr>
+                    <td><c:out value="${dato.numeroColegio}"/></td>
+                    <td><c:out value="${dato.fechaAlta}"/></td>
+                    <td><c:out value="${dato.estado}"/></td>
+                    <td><c:out value="${dato.idPersona.nombres}"/></td>                                    
+                    <td><c:out value="${dato.idPersona.apellPaterno}"/> 
+                        <c:out value="${dato.idPersona.apellMater}"/></td>
+                    <td><c:out value="${dato.idPersona.dni}"/></td>
+                    <td>
+                        <a href="eliminarDoctor?id=${dato.idDoctor}">Eliminar</a>&emsp14;                                        
+                    </td>
+                </tr>
+                </c:forEach>
                             </table>
-
                             Holasss
                         </c:if>
               </div>

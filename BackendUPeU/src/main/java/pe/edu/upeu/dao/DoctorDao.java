@@ -17,5 +17,6 @@ public interface DoctorDao {
     public Doctor buscarEntidadId(int id);
     public void guardarEntidad(Doctor entidad);
     public void eliminarEntidadId(int id);
-    public void modificarEntidadId(Doctor entidad);       
+    public void modificarEntidadId(Doctor entidad); 
+    public List<Doctor> listarPorNombre(String dato);
 }
