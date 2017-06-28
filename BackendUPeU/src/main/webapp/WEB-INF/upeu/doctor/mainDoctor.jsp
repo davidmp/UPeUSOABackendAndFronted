@@ -52,7 +52,7 @@
         <input  type="submit"  class="button2" value="Buscar" >&nbsp;
         </td>
         <td>
-            <input  type="button" value="Nuevo" onclick="document.location.href='/BackendUPeU/formDiente'" class="btn btn-success" >&nbsp;   
+            <input  type="button" value="Nuevo" onclick="document.location.href='${pageContext.request.contextPath}/formDiente'" class="btn btn-success" >&nbsp;   
         </td>
         </tr>
         </table>

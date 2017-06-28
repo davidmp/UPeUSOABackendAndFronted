@@ -17,5 +17,6 @@ public interface PersonaServis {
     public Persona buscarEntidadId(int id);
     public void guardarEntidad(Persona entidad);
     public void eliminarEntidadId(int id);
-    public void modificarEntidadId(Persona entidad);       
+    public void modificarEntidadId(Persona entidad);
+    public Persona listarPorNombre(String login, String clave);
 }

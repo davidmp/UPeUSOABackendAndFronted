@@ -28,6 +28,8 @@ public class PersonaServisImpl implements PersonaServis{
     @Override
     public Persona buscarEntidadId(int id) {return dao.buscarEntidadId(id);}
     @Override
+    public Persona listarPorNombre(String login, String clave){return dao.listarPorNombre(login, clave);}
+    @Override
     public void guardarEntidad(Persona entidad) {dao.guardarEntidad(entidad); }  
     @Override
     public void eliminarEntidadId(int id) {dao.eliminarEntidadId(id);}    

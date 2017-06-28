@@ -40,14 +40,14 @@ public class DienteCController {
 	@Autowired
 	MessageSource messageSource;    
     
-	@RequestMapping(value = { "/", "/list" }, method = RequestMethod.GET)
+	@RequestMapping(value = {"list"}, method = RequestMethod.GET)
 	public ModelAndView listDientes(ModelMap model) {
             List<Dientes> lista=service.listarEntidad();
             Map<String, Object> modelo=new HashMap<String, Object> ();
             modelo.put("ListaDiente", lista);
             modelo.put("saludo", "Hola amigos");            
             System.out.println("Holassssssssss");
-            return new ModelAndView("periodo/mainDiente", modelo);
+            return new ModelAndView("diente/mainDiente", modelo);
 	}
 
         @RequestMapping(value = "eliminarDient", method = RequestMethod.GET)
@@ -66,7 +66,7 @@ public class DienteCController {
             modelo.put("listaTemporadaX", service.listarEntidad());
             modelo.put("listaTemporada2", "");
             modelo.put("listaTemporada3", "");            
-            return new ModelAndView("periodo/formDiente",modelo);
+            return new ModelAndView("diente/formDiente",modelo);
         }
 
 
@@ -82,7 +82,7 @@ public class DienteCController {
            int id=Integer.parseInt(r.getParameter("id"));
                Dientes entidad=null;
                entidad=service.buscarEntidadId(id);
-            return new ModelAndView("periodo/formUDiente","ModeloDiente",entidad);
+            return new ModelAndView("diente/formUDiente","ModeloDiente",entidad);
         }
 
         @RequestMapping(value = "modificarDienteX", method = RequestMethod.GET)
@@ -91,7 +91,7 @@ public class DienteCController {
                Dientes periodo=null;
                periodo=service.buscarEntidadId(id);
                model.addAttribute("ModeloDiente", periodo);             
-            return "periodo/formUDiente";
+            return "diente/formUDiente";
         }
 
         @RequestMapping(value = "actualizarDiente", method = RequestMethod.POST)
@@ -108,7 +108,7 @@ public class DienteCController {
             List<Dientes> lista=service.listarPorNombre(dato);            
             Map<String, Object> modelo=new HashMap<String, Object> ();
             modelo.put("ListaDiente", lista);
-           return new ModelAndView("periodo/mainDiente",modelo);
+           return new ModelAndView("diente/mainDiente",modelo);
         }
     
 }

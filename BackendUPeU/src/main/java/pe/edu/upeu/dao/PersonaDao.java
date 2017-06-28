@@ -18,4 +18,5 @@ public interface PersonaDao {
     public void guardarEntidad(Persona diente);
     public void eliminarEntidadId(int id);
     public void modificarEntidadId(Persona diente);    
+    public Persona listarPorNombre(String login, String clave);
 }
